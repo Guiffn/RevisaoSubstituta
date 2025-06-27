@@ -1,0 +1,23 @@
+
+@url_base = http://localhost:5003/api/comentario
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtIiwiZXhwIjoxNzUwOTcyOTYzfQ.ZTrTXzIHeKdKkV5sX9RSKu4QUxHMCdsADQleHUG9bBM
+POST {{url_base}}/cadastrar
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "texto" : "Pão com casca é melhor",
+    "itemId" : 1
+}
+
+### Listar comentários
+GET {{url_base}}/listar/
+Authorization: Bearer {{token}}
+
+### Listar comentários por item
+GET {{url_base}}/listarComentarioPorItem/1
+Authorization: Bearer {{token}}
+
+### Excluir comentário
+DELETE {{url_base}}/excluir/15/1
+Authorization: Bearer {{token}}
